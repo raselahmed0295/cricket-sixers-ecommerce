@@ -1,14 +1,140 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cricket Sixers Ecommerce</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <h1>Hello Everyone</h1>
-</body>
+  </head>
+  <body>
+    <header class="bg-gray-400">
+      <nav
+        class="container mx-auto flex justify-between items-center text-2xl py-4 list-none px-2"
+      >
+        <li>
+          <a href="#">Budget <span class="text-white" id="budget">2500</span> $</a>
+        </li>
+        <li>
+          <a href="#">Cart <span class="text-white" id="cart">0</span> </a>
+        </li>
+        <li>
+          <a href="#">Left <span class="text-white" id="left">6</span> </a>
+        </li>
+      </nav>
+    </header>
+
+    <main class="lg:my-10 lg:flex lg:mx-5">
+      <div class="grid lg:grid-cols-2 gap-4 lg:w-[50%]">
+        <!-- Content Section -->
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Shakib Al Hasan</h1>
+          <h2 class="font-bold">Price: <span>550</span>$</h2>
+          <h2 class="font-bold">Category: <span>all-rounder</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Tamim Iqbal</h1>
+          <h2 class="font-bold">Price: <span>300</span>$</h2>
+          <h2 class="font-bold">Category: <span>Left Handed Batsman</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Musfiqur Rahaman</h1>
+          <h2 class="font-bold">Price: <span>300</span>$</h2>
+          <h2 class="font-bold">Category: <span>Right Handed Bater</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Masrafi</h1>
+          <h2 class="font-bold">Price: <span>300</span>$</h2>
+          <h2 class="font-bold">Category: <span>Fast Boler</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Sabbir Rahman</h1>
+          <h2 class="font-bold">Price: <span>250</span>$</h2>
+          <h2 class="font-bold">Category: <span>BatsMan</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Nafis</h1>
+          <h2 class="font-bold">Price: <span>250</span>$</h2>
+          <h2 class="font-bold">Category: <span>Bater</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Mustafiz Rahman</h1>
+          <h2 class="font-bold">Price: <span>250</span>$</h2>
+          <h2 class="font-bold">Category: <span>Boller</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="p-6 text-center space-y-2 shadow-lg">
+          <h1 class="font-bold text-xl">Riad</h1>
+          <h2 class="font-bold">Price: <span>300</span>$</h2>
+          <h2 class="font-bold">Category: <span>all-rounder</span></h2>
+          <button class="btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="lg:w-[50%]">
+        <div class="border-2  lg:ml-12 shadow-lg">
+          <div class="mx-5 my-5">
+            <h1 class="text-2xl font-bold text-center my-4">My Cart</h1>
+            <hr />
+            <div class="flex list-none justify-between items-center my-2 font-bold">
+              <li>
+                <a href="#">Name</a>
+              </li>
+              <li>
+                <a href="#">Price</a>
+              </li>
+              <li>
+                <a href="#">Category </a>
+              </li>
+            </div>
+            <div id="selected-player-container"></div>
+            <hr />
+            <h2 class="font-bold text-xl text-center py-2">
+              Total Cost: <span id="total-cost">0</span>$
+            </h2>
+            <hr />
+            <div class="my-4">
+              <div class="flex gap-4 justify-center items-center">
+                <input
+                  class="border-2 p-2"
+                  type="text"
+                  name=""
+                  id="coupon-code"
+                  placeholder="coupon code"
+                />
+                <button onclick="updateGrandTotal('apply-btn')" class="btn" id="apply-btn">Apply</button>
+              </div>
+            </div>
+            <hr />
+            <h2 class="font-bold text-xl text-center py-2">
+              Grand Totals: <span id="grand-total">0</span>$
+            </h2>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
